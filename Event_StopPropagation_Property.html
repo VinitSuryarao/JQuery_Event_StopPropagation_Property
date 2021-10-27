@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title> JQuery Test  </title>
+   <style>
+      #divA{
+         background-color: palegreen;
+         position: relative;
+         border: 1px solid black;
+      }
+   </style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type = "text/javascript">
+
+		    // ready func call when document is ready to render
+         $(document).ready(function() 
+         {     
+            
+            $("#divA").click(function(event){
+               $('#result').text("Div Click");
+            });
+
+            $("#btnSave").click(function(event){
+               event.stopPropagation();
+               $('#result').text("Event :- Button Click"+" Propagation Stop ="+event.isPropagationStopped());
+            });
+
+         });
+     </script>
+<head>
+   <body>
+   <div id="divA">
+      <h2> JQuery Information</h2>
+      <p>jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax</p>
+      <button id="btnSave">Save Data</button>
+   </div>
+   <p id="result"></p>
+</body>
+</html>
